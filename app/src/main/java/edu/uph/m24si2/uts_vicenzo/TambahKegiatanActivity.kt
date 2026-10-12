@@ -3,12 +3,14 @@ package edu.uph.m24si2.uts_vicenzo
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import edu.uph.m24si2.uts_vicenzo.model.Kegiatan
 
 class TambahKegiatanActivity : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
@@ -30,8 +32,9 @@ class TambahKegiatanActivity : AppCompatActivity() {
         btnSimpan.setOnClickListener {
             val WaktuKegiatan = edtWaktuKegiatan.text.toString()
             val NamaKegiatan = edtNamaKegiatan.text.toString()
+            val kegiatan = Kegiatan(WaktuKegiatan, NamaKegiatan)
             db.collection("kegiatan")
-                .add(produk)
+                .add(kegiatan)
                 .addOnSuccessListener {
                     Toast.makeText(this, " Berhasil Menyimpan data", Toast.LENGTH_SHORT).show()
                     finish()
