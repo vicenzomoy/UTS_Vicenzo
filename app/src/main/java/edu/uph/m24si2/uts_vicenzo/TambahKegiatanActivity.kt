@@ -32,7 +32,7 @@ class TambahKegiatanActivity : AppCompatActivity() {
         btnSimpan.setOnClickListener {
             val WaktuKegiatan = edtWaktuKegiatan.text.toString()
             val NamaKegiatan = edtNamaKegiatan.text.toString()
-            val kegiatan = Kegiatan(WaktuKegiatan, NamaKegiatan)
+            val kegiatan = Kegiatan(NamaKegiatan, WaktuKegiatan)
             db.collection("kegiatan")
                 .add(kegiatan)
                 .addOnSuccessListener {

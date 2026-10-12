@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "edu.uph.m24si2.uts_vicenzo"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "edu.uph.m24si2.uts_vicenzo"
         minSdk = 30
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
