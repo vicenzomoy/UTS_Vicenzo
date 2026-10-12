@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     private fun konfirmasiHapus(kegiatan: Kegiatan) {
         AlertDialog.Builder(this)
             .setTitle("Hapus Kegiatan")
-            .setMessage("Apakah anda yakin ingin menghapus" + "${kegiatan.NamaKegiatan}")
+            .setMessage("Apakah anda yakin ingin menghapus " + "${kegiatan.NamaKegiatan}")
             .setPositiveButton("Hapus") {
                     _, _ -> hapusKegiatan(kegiatan)
             }

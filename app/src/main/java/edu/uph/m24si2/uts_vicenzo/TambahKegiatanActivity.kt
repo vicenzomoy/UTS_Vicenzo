@@ -32,6 +32,10 @@ class TambahKegiatanActivity : AppCompatActivity() {
         btnSimpan.setOnClickListener {
             val WaktuKegiatan = edtWaktuKegiatan.text.toString()
             val NamaKegiatan = edtNamaKegiatan.text.toString()
+            if (edtWaktuKegiatan.text.isEmpty() || edtNamaKegiatan.text.isEmpty()) {
+                Toast.makeText(this, "Waktu dan Nama Kegiatan Tidak Boleh Kosong!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             val kegiatan = Kegiatan(NamaKegiatan, WaktuKegiatan)
             db.collection("kegiatan")
                 .add(kegiatan)
